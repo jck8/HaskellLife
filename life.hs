@@ -6,7 +6,7 @@ showCell life (x, y)
   |(x, y) `elem` life = "O"
   |otherwise = "-"
 
-showRow life width row = concat (map (showCell life) [(x, row)|x<-[0..width]])
+showRow life width row = concatMap (showCell life) [(x, row)|x<-[0..width]]
                
 showLife life (width, height) = map (showRow life width) [0..height]  
 
