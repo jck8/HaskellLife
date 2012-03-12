@@ -2,7 +2,7 @@ toad = [(5, 5), (6, 5), (7, 5), (4, 6), (5, 6), (6, 6)]
 glider = [(0, 2), (1, 2), (2, 2), (2, 1), (1, 0)]
 beacon = [(0, 0), (0, 1), (1, 0), (2, 3), (3, 3), (3, 2)]
 
-countNeighbors (a, b) life = length $ filter (\x -> x==True) [(inc a, b) `elem` life, (a, inc b) `elem` life, (inc a, inc b) `elem` life, (dec a, b) `elem` life, (dec a, dec b) `elem` life, (a, dec b) `elem` life, (inc a, dec b) `elem` life, (dec a, inc b) `elem` life]
+countNeighbors (a, b) life = length $ filter (==True) [(inc a, b) `elem` life, (a, inc b) `elem` life, (inc a, inc b) `elem` life, (dec a, b) `elem` life, (dec a, dec b) `elem` life, (a, dec b) `elem` life, (inc a, dec b) `elem` life, (dec a, inc b) `elem` life]
 
 inc x = (x + 1) `mod` 20
 dec x = (x - 1) `mod` 20
